@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1. Foundations: AI & NLP Basics — RAG Roadmap</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <div class="container infographic">
+    <a href="../index.html" class="nav-home">← Back to Roadmap</a>
+    <div class="info-hero">
+      <div class="info-icon">🤖</div>
+      <span class="level-badge level-green">Beginner</span>
+      <h1>1. Foundations: AI & NLP Basics</h1>
+      <p class="subtitle">Core concepts you need before diving into RAG</p>
+    </div>
+
+    <div class="info-section-label">What is Generative AI</div>
+    <div class="info-highlight">Models that create new content (text, images, code) from training patterns. For RAG: <strong>LLMs</strong>—autoregressive models predicting next tokens for coherent generation.</div>
+
+    <div class="info-section-label">LLM Fundamentals</div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+        <div class="card-title">Tokens</div>
+        <div class="card-desc">~4 chars or 0.75 words each. Affects cost, latency. "RAG" ≈ 4–5 tokens.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-window-maximize"></i></div>
+        <div class="card-title">Context Window</div>
+        <div class="card-desc">Max tokens the model sees (4k–128k+). Retrieved passages + query must fit.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-temperature-half"></i></div>
+        <div class="card-title">Temperature</div>
+        <div class="card-desc">0–0.3 = factual, 0.7–1 = creative. Use low for RAG to reduce hallucination.</div>
+      </div>
+    </div>
+
+    <div class="info-section-label">Embeddings</div>
+    <div class="info-highlight">Dense vector arrays (768–1536 dims) capturing semantic meaning. Similar concepts cluster. RAG uses them for <strong>semantic similarity</strong> search, not keywords.</div>
+
+    <div class="info-section-label">Transformers</div>
+    <div class="info-highlight"><strong>Self-attention</strong> weighs token relationships. Encoder → embeddings; Decoder → text. LLMs are decoder-only. Handle variable-length, parallel processing.</div>
+
+    <div class="info-section-label">Prompt Engineering</div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+        <div class="card-title">Key techniques</div>
+        <div class="card-desc">Clear instructions, few-shot examples, role-setting, delimiters. Tell model: use only context; say "I don't know" when absent.</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p><a href="../index.html">← Roadmap</a> | <a href="02-information-retrieval.html">Next: Information Retrieval →</a></p>
+    </div>
+  </div>
+</body>
+</html>

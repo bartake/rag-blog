@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4. RAG Core Concept — RAG Roadmap</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container infographic">
+    <a href="../index.html" class="nav-home">← Back to Roadmap</a>
+    <div class="info-hero">
+      <div class="info-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+      <span class="level-badge level-green">Beginner</span>
+      <h1>4. RAG Core Concept</h1>
+      <p class="subtitle">What RAG is, why it exists, and how it works</p>
+    </div>
+
+    <div class="info-section-label">RAG Pipeline</div>
+    <div class="info-flow">
+      <div class="info-flow-step"><i class="fa-solid fa-file-import"></i> Ingest</div>
+      <span class="arrow">→</span>
+      <div class="info-flow-step"><i class="fa-solid fa-magnifying-glass"></i> Retrieve</div>
+      <span class="arrow">→</span>
+      <div class="info-flow-step"><i class="fa-solid fa-robot"></i> Generate</div>
+    </div>
+
+    <div class="info-section-label">Core Concepts</div>
+    <div class="info-grid">
+      <div class="info-card"><div class="card-icon"><i class="fa-solid fa-book"></i></div><div class="card-title">What is RAG</div><div class="card-desc">LLM + retrieval. Fetch docs from knowledge base, inject into prompt. Grounds model in factual/private data.</div></div>
+      <div class="info-card"><div class="card-icon"><i class="fa-solid fa-ghost"></i></div><div class="card-title">Hallucination</div><div class="card-desc">LLMs invent facts when ungrounded. RAG provides source material; answer only from context.</div></div>
+      <div class="info-card"><div class="card-icon"><i class="fa-solid fa-code-branch"></i></div><div class="card-title">RAG vs Fine-tune</div><div class="card-desc">RAG: frozen model + query-time retrieval. Fine-tune: update weights. RAG for dynamic/large knowledge.</div></div>
+      <div class="info-card"><div class="card-icon"><i class="fa-solid fa-database"></i></div><div class="card-title">Ingestion</div><div class="card-desc">Parse, chunk, embed, store. Attach metadata for filtering.</div></div>
+      <div class="info-card"><div class="card-icon"><i class="fa-solid fa-magnifying-glass-plus"></i></div><div class="card-title">Retrieval</div><div class="card-desc">Embed query, fetch top-k. Optional: rerank, hybrid, query expansion.</div></div>
+      <div class="info-card"><div class="card-icon"><i class="fa-solid fa-comment-dots"></i></div><div class="card-title">Generation</div><div class="card-desc">Format chunks, inject prompt. LLM answers from context. Optional: citations, hallucination checks.</div></div>
+    </div>
+
+    <div style="display:none"><article>
+      <h2>What is RAG and Why It Exists</h2>
+      <p><strong>Retrieval-Augmented Generation (RAG)</strong> combines an LLM with a retrieval system. Before generating an answer, the system retrieves relevant documents from a knowledge base and injects them into the prompt. This grounds the LLM in factual, up-to-date, or private data without retraining. RAG exists because LLMs have knowledge cutoff dates, can hallucinate, and shouldn't store sensitive/proprietary data in their weights.</p>
+
+      <h2>Hallucination Problem in LLMs</h2>
+      <p>LLMs generate plausible-sounding text even when wrong. They may invent citations, facts, or reasoning. <strong>Hallucination</strong> happens when the model has no grounding and fills gaps from its training distribution. RAG mitigates this by providing source material; the model is instructed to answer only from that context, reducing (but not eliminating) fabricated content.</p>
+
+      <h2>RAG vs Fine-Tuning</h2>
+      <p><strong>Fine-tuning</strong> updates model weights on your data—good for style, format, domain vocabulary. But it's expensive, requires retraining for updates, and doesn't scale to huge or changing corpora. <strong>RAG</strong> keeps the model frozen and fetches context at query time. You can update the knowledge base instantly. Use RAG for dynamic, large, or frequently changing knowledge; fine-tune for consistent output behavior.</p>
+
+      <h2>Basic RAG Pipeline</h2>
+      <h3>Ingestion</h3>
+      <p>Documents are parsed, chunked, embedded, and stored in a vector database. Metadata (source, date, section) is attached for filtering.</p>
+      <h3>Retrieval</h3>
+      <p>User query is embedded; similar chunks are fetched (e.g., top-k). Optional: reranking, hybrid search, query expansion.</p>
+      <h3>Generation</h3>
+      <p>Retrieved chunks are formatted and injected into a prompt. The LLM generates an answer conditioned on that context.</p>
+    </article></div>
+
+    <div class="footer">
+      <p><a href="03-vector-databases.html">← Vector Databases</a> | <a href="../index.html">Roadmap</a> | <a href="05-data-preparation.html">Next: Data Preparation →</a></p>
+    </div>
+  </div>
+</body>
+</html>

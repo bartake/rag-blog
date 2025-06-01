@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Infographic — Retrieval-Augmented Generation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0e14;
+      --bg-card: #141a24;
+      --border: #1e293b;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --cyan: #06b6d4;
+      --cyan-light: #22d3ee;
+      --purple: #a855f7;
+      --purple-light: #c084fc;
+      --green: #22c55e;
+      --amber: #f59e0b;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    .infographic { max-width: 920px; margin: 0 auto; padding: 2rem 1.5rem; }
+    
+    .hero {
+      background: linear-gradient(135deg, rgba(6,182,212,0.12) 0%, rgba(168,85,247,0.12) 100%);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.5rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .hero .icon { font-size: 1.5rem; color: var(--cyan); margin-bottom: 0.35rem; }
+    .hero h1 { font-size: 1.35rem; font-weight: 700; background: linear-gradient(135deg, var(--cyan), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.25rem; }
+    .hero .tagline { font-size: 0.85rem; color: var(--muted); }
+    .hero .explanation { text-align: left; margin-top: 1rem; padding: 0.9rem 1rem; background: rgba(0,0,0,0.2); border-radius: 8px; font-size: 0.85rem; color: var(--text); line-height: 1.5; }
+    
+    .section-label { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--cyan); margin: 2rem 0 1rem; }
+    .section-label:first-of-type { margin-top: 0; }
+    
+    .flow-row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; justify-content: center; margin: 1.5rem 0; }
+    .flow-step {
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      min-width: 140px;
+      border-left: 4px solid var(--cyan);
+    }
+    .flow-step .step-icon { font-size: 1.5rem; color: var(--cyan-light); }
+    .flow-step .step-name { font-weight: 600; font-size: 0.95rem; }
+    .flow-step .step-desc { font-size: 0.75rem; color: var(--muted); text-align: center; }
+    .flow-arrow { color: var(--cyan); font-size: 1.25rem; }
+    
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      border-left: 4px solid var(--purple);
+    }
+    .card .card-icon { font-size: 1.25rem; color: var(--purple-light); margin-bottom: 0.5rem; }
+    .card .card-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.35rem; }
+    .card .card-desc { font-size: 0.85rem; color: var(--muted); }
+    .card .card-use { font-size: 0.75rem; margin-top: 0.5rem; color: var(--green); }
+    
+    table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 1rem 0; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); }
+    th, td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+    th { background: rgba(6,182,212,0.15); color: var(--cyan-light); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    td { color: var(--text); }
+    tr:hover td { background: rgba(255,255,255,0.02); }
+    .pro { color: var(--green); }
+    .con { color: #f87171; }
+    
+    .highlight { background: rgba(6,182,212,0.08); border-left: 4px solid var(--cyan); border-radius: 0 10px 10px 0; padding: 1rem 1.25rem; margin: 1rem 0; font-size: 0.9rem; }
+    .nav-home { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--cyan); text-decoration: none; font-size: 0.9rem; margin-bottom: 1rem; }
+    .nav-home:hover { color: var(--cyan-light); }
+    .footer { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="infographic">
+    <a href="index.html" class="nav-home"><i class="fa-solid fa-arrow-left"></i> Back to RAG Roadmap</a>
+
+    <div class="hero">
+      <div class="icon"><i class="fa-solid fa-brain"></i></div>
+      <h1>Retrieval-Augmented Generation (RAG)</h1>
+      <p class="tagline">Grounding LLMs in your data — without fine-tuning</p>
+      <div class="explanation">
+        <p><strong>RAG</strong> augments large language models with external knowledge at inference time. Instead of relying solely on pre-trained weights (which have cutoff dates and can hallucinate), RAG retrieves relevant documents from a knowledge base, injects them into the prompt, and lets the LLM generate answers grounded in that context. This enables up-to-date, factual, and citeable responses from private or proprietary data—without retraining the model.</p>
+      </div>
+    </div>
+
+    <div class="section-label">RAG Workflows</div>
+    <div class="flow-row">
+      <div class="flow-step">
+        <span class="step-icon"><i class="fa-solid fa-file-import"></i></span>
+        <span class="step-name">Ingestion</span>
+        <span class="step-desc">Parse, chunk, embed, store</span>
+      </div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step">
+        <span class="step-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <span class="step-name">Retrieval</span>
+        <span class="step-desc">Embed query, find top-K chunks</span>
+      </div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-step">
+        <span class="step-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+        <span class="step-name">Generation</span>
+        <span class="step-desc">Inject context, call LLM, return answer</span>
+      </div>
+    </div>
+    <div class="highlight">
+      <strong>End-to-end:</strong> Documents → chunks → embeddings → vector DB. At query: user question → embedding → similarity search → retrieved chunks + question → LLM → answer.
+    </div>
+
+    <div class="section-label">Embeddings & Storage Techniques — Use Cases</div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-layer-group"></i></div>
+        <div class="card-title">Dense Embeddings (Single Vector)</div>
+        <div class="card-desc">One vector per chunk. Semantic similarity via cosine/dot product. Fast, scalable.</div>
+        <div class="card-use">Use: General QA, documentation search, FAQ bots</div>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-code-branch"></i></div>
+        <div class="card-title">Parent-Child Chunking</div>
+        <div class="card-desc">Small children for retrieval, return larger parent for context. Granular search + coherent context.</div>
+        <div class="card-use">Use: Long documents, technical manuals, legal docs</div>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-keyboard"></i></div>
+        <div class="card-title">Hybrid (Vector + BM25)</div>
+        <div class="card-desc">Combine semantic and keyword search. RRF fusion. Covers exact terms + paraphrases.</div>
+        <div class="card-use">Use: Product search, support tickets, names/IDs</div>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-database"></i></div>
+        <div class="card-title">Metadata Filtering</div>
+        <div class="card-desc">Filter by source, date, tenant, language. Pre/post filter on vector search.</div>
+        <div class="card-use">Use: Multi-tenant SaaS, time-sensitive docs, localized content</div>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-sort"></i></div>
+        <div class="card-title">Re-ranking (Cross-encoder)</div>
+        <div class="card-desc">Retrieve many, re-rank top-20→top-5. Query+passage scored together. Higher accuracy.</div>
+        <div class="card-use">Use: High-stakes answers, legal/medical, when precision > speed</div>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-compress"></i></div>
+        <div class="card-title">Context Compression</div>
+        <div class="card-desc">LLM summarizes long chunks before injection. Fewer tokens, key info preserved.</div>
+        <div class="card-use">Use: Large context limits, cost-sensitive, summarization-focused</div>
+      </div>
+    </div>
+
+    <div class="section-label">Vector Database Comparison</div>
+    <table>
+      <thead>
+        <tr>
+          <th>Database</th>
+          <th>Type</th>
+          <th>Strengths</th>
+          <th>Considerations</th>
+          <th>Best For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Pinecone</strong></td>
+          <td>Managed</td>
+          <td class="pro">Serverless, auto-scale, simple API</td>
+          <td class="con">Cost at scale, vendor lock-in</td>
+          <td>Startups, rapid prototyping, production MVP</td>
+        </tr>
+        <tr>
+          <td><strong>Weaviate</strong></td>
+          <td>Open-source / Cloud</td>
+          <td class="pro">Hybrid search, GraphQL, built-in vectorizers</td>
+          <td class="con">Self-host ops if on-prem</td>
+          <td>Hybrid search, flexible schema, multi-modal</td>
+        </tr>
+        <tr>
+          <td><strong>Milvus</strong></td>
+          <td>Open-source</td>
+          <td class="pro">Billion-scale, distributed, high throughput</td>
+          <td class="con">Complex deployment</td>
+          <td>Enterprise, large corpora, heavy write load</td>
+        </tr>
+        <tr>
+          <td><strong>Chroma</strong></td>
+          <td>Open-source</td>
+          <td class="pro">Lightweight, Python-first, easy local dev</td>
+          <td class="con">Not built for huge scale</td>
+          <td>Prototyping, local dev, small/medium datasets</td>
+        </tr>
+        <tr>
+          <td><strong>pgvector</strong></td>
+          <td>Postgres extension</td>
+          <td class="pro">SQL + vectors, ACID, existing Postgres stack</td>
+          <td class="con">ANN perf vs dedicated DBs</td>
+          <td>Existing Postgres users, SQL + metadata queries</td>
+        </tr>
+        <tr>
+          <td><strong>Qdrant</strong></td>
+          <td>Open-source / Cloud</td>
+          <td class="pro">Filtering, payload indexing, good docs</td>
+          <td class="con">Smaller ecosystem</td>
+          <td>Filter-heavy workloads, payload-rich metadata</td>
+        </tr>
+        <tr>
+          <td><strong>Redis (Redis Stack)</strong></td>
+          <td>In-memory + vectors</td>
+          <td class="pro">Sub-ms latency, caching + search</td>
+          <td class="con">Memory-bound, cost at scale</td>
+          <td>Low-latency, cache+search combo</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="section-label">Key Concepts</div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-ghost"></i></div>
+        <div class="card-title">Why RAG? (Hallucination)</div>
+        <div class="card-desc">LLMs make up plausible but false answers. RAG grounds responses in retrieved docs—reduce fabrication.</div>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+        <div class="card-title">RAG vs Fine-Tuning</div>
+        <div class="card-desc">RAG: update knowledge instantly. Fine-tune: change behavior/style. Use both for hybrid (RAG + fine-tuned model).</div>
+      </div>
+    </div>
+
+    <div class="section-label">Production Checklist</div>
+    <div class="highlight">
+      <ul style="margin-left: 1.25rem; margin-top: 0.5rem;">
+        <li><strong>Chunking:</strong> Semantic or overlap; tune size for your domain</li>
+        <li><strong>Embeddings:</strong> Match ingest + query model; cache when possible</li>
+        <li><strong>Retrieval:</strong> Top-K + optional re-rank; consider hybrid</li>
+        <li><strong>Prompts:</strong> Clear instruction to "answer only from context"; say "I don't know" when unsure</li>
+        <li><strong>Observability:</strong> Log queries, retrieval results, token usage, latency</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <p>RAG Infographic • <a href="index.html" style="color: var(--cyan);">RAG Learning Roadmap</a></p>
+    </div>
+  </div>
+</body>
+</html>

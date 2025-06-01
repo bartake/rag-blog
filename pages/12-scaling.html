@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12. Scaling RAG Systems — RAG Roadmap</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container infographic">
+    <a href="../index.html" class="nav-home">← Back to Roadmap</a>
+    <div class="info-hero">
+      <div class="info-icon"><i class="fa-solid fa-gauge-high"></i></div>
+      <span class="level-badge level-orange">Advanced</span>
+      <h1>12. Scaling RAG Systems</h1>
+      <p class="subtitle">Index sharding, distributed search, caching, latency, streaming</p>
+    </div>
+    <div class="info-section-label">Scale & Performance</div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-shapes"></i></div>
+        <div class="card-title">Index Sharding</div>
+        <div class="card-desc">Split by tenant, time, category. Merge & re-rank. Per-tenant scaling.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-sitemap"></i></div>
+        <div class="card-title">Distributed Vector Search</div>
+        <div class="card-desc">Milvus, Weaviate cluster. Replication for reads; sharding for writes.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-memory"></i></div>
+        <div class="card-title">Caching</div>
+        <div class="card-desc">Embeddings + LLM responses. Redis/Memcached, TTLs. High hit rates for FAQs.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-clock"></i></div>
+        <div class="card-title">Latency</div>
+        <div class="card-desc">Batch embeddings, async pipelines, connection pooling. Pre-compute at ingest.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-stream"></i></div>
+        <div class="card-title">Streaming</div>
+        <div class="card-desc">SSE/WebSocket for token streaming. Retrieval before stream starts.</div>
+      </div>
+    </div>
+    <div class="footer">
+      <p><a href="11-evaluation.html">← Evaluation</a> | <a href="../index.html">Roadmap</a> | <a href="13-production.html">Next: Production →</a></p>
+    </div>
+  </div>
+</body>
+</html>

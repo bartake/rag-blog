@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5. Data Preparation & Ingestion — RAG Roadmap</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container infographic">
+    <a href="../index.html" class="nav-home">← Back to Roadmap</a>
+    <div class="info-hero">
+      <div class="info-icon"><i class="fa-solid fa-file-import"></i></div>
+      <span class="level-badge level-yellow">Intermediate</span>
+      <h1>5. Data Preparation & Ingestion</h1>
+      <p class="subtitle">Getting your documents ready for retrieval</p>
+    </div>
+
+    <div class="info-section-label">Document Parsing</div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-file-pdf"></i></div>
+        <div class="card-title">PDF</div>
+        <div class="card-desc">PyMuPDF, pdfplumber, Unstructured. Tables: Tabula, Camelot.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-brands fa-html5"></i></div>
+        <div class="card-title">HTML</div>
+        <div class="card-desc">BeautifulSoup, Trafilatura. Extract main content, strip nav/footer.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-table"></i></div>
+        <div class="card-title">Structured (JSON/CSV)</div>
+        <div class="card-desc">Map fields to text. Flatten or template for consistent chunks.</div>
+      </div>
+    </div>
+
+    <div class="info-section-label">Chunking Strategies</div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-ruler"></i></div>
+        <div class="card-title">Fixed</div>
+        <div class="card-desc">By char/token count (e.g. 512). Simple but can break mid-paragraph.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-object-group"></i></div>
+        <div class="card-title">Overlapping</div>
+        <div class="card-desc">Sliding window + overlap. Reduces boundary loss; slightly more storage.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
+        <div class="card-title">Semantic</div>
+        <div class="card-desc">Paragraphs/sections or embedding-based. Preserves meaning; variable size.</div>
+      </div>
+    </div>
+
+    <div class="info-section-label">Cleaning & Metadata</div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-broom"></i></div>
+        <div class="card-title">Cleaning</div>
+        <div class="card-desc">Remove boilerplate, normalize whitespace/encoding. Better embedding quality.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-tags"></i></div>
+        <div class="card-title">Metadata Design</div>
+        <div class="card-desc">source, url, title, section, page, date. Filtering + citation.</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p><a href="04-rag-core.html">← RAG Core</a> | <a href="../index.html">Roadmap</a> | <a href="06-embedding-strategy.html">Next: Embedding Strategy →</a></p>
+    </div>
+  </div>
+</body>
+</html>

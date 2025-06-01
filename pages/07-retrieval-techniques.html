@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7. Retrieval Techniques — RAG Roadmap</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container infographic">
+    <a href="../index.html" class="nav-home">← Back to Roadmap</a>
+    <div class="info-hero">
+      <div class="info-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+      <span class="level-badge level-yellow">Intermediate</span>
+      <h1>7. Retrieval Techniques</h1>
+      <p class="subtitle">Top-K, thresholds, hybrid search, query expansion, multi-query</p>
+    </div>
+    <div class="info-section-label">Core Techniques</div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-arrow-down-1-9"></i></div>
+        <div class="card-title">Top-K Retrieval</div>
+        <div class="card-desc">Return K most similar. K=5–10 common. Too small misses; too large adds noise.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-sliders"></i></div>
+        <div class="card-title">Similarity Thresholds</div>
+        <div class="card-desc">Cosine > 0.7 cutoff. Filters weak matches; can over-filter if noisy.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-link"></i></div>
+        <div class="card-title">Hybrid Search</div>
+        <div class="card-desc">BM25 + vector. RRF to merge. Covers exact & semantic.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-expand"></i></div>
+        <div class="card-title">Query Expansion</div>
+        <div class="card-desc">Synonyms, paraphrases. Retrieve for each, merge. Better recall.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-code-branch"></i></div>
+        <div class="card-title">Multi-Query</div>
+        <div class="card-desc">LLM creates variants, retrieve each, deduplicate. Robust to phrasing.</div>
+      </div>
+    </div>
+    <div class="footer">
+      <p><a href="06-embedding-strategy.html">← Embedding</a> | <a href="../index.html">Roadmap</a> | <a href="08-prompt-construction.html">Next: Prompt Construction →</a></p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9. RAG Implementation (Hands-on) — RAG Roadmap</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container infographic">
+    <a href="../index.html" class="nav-home">← Back to Roadmap</a>
+    <div class="info-hero">
+      <div class="info-icon"><i class="fa-solid fa-code"></i></div>
+      <span class="level-badge level-yellow">Intermediate</span>
+      <h1>9. RAG Implementation (Hands-on)</h1>
+      <p class="subtitle">Building your first RAG app with frameworks and APIs</p>
+    </div>
+    <div class="info-flow">
+      <div class="info-flow-step">Ingest</div>
+      <span class="arrow">→</span>
+      <div class="info-flow-step">Store Embeddings</div>
+      <span class="arrow">→</span>
+      <div class="info-flow-step">Query + Generate</div>
+    </div>
+    <div class="info-section-label">Flow</div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-file-import"></i></div>
+        <div class="card-title">Ingest Docs</div>
+        <div class="card-desc">Parse, chunk (500 tokens + overlap), attach metadata (source, page).</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-database"></i></div>
+        <div class="card-title">Store Embeddings</div>
+        <div class="card-desc">Embed via API or local model. Upsert to Pinecone, Chroma, pgvector.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <div class="card-title">Query + Generate</div>
+        <div class="card-desc">Embed question, retrieve top-K, build prompt, call LLM, stream response.</div>
+      </div>
+    </div>
+    <div class="info-section-label">Frameworks & APIs</div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-link"></i></div>
+        <div class="card-title">LangChain</div>
+        <div class="card-desc">Composable chains, loaders, vector stores. Good for prototyping.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-list-tree"></i></div>
+        <div class="card-title">LlamaIndex</div>
+        <div class="card-desc">Indexing & retrieval focus. Strong for ingestion and query graphs.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-plug"></i></div>
+        <div class="card-title">OpenAI & Others</div>
+        <div class="card-desc">text-embedding-3-*, GPT-4. Anthropic, Cohere. Consider cost, latency.</div>
+      </div>
+    </div>
+    <div style="display:none"><article>
+      <h2>Building a Simple RAG App</h2>
+      <p>The minimal flow: <strong>Ingest</strong> documents (parse, chunk) → <strong>Store</strong> embeddings in a vector DB → <strong>Query</strong>: embed user question, retrieve top-K chunks, inject into prompt, call LLM, return answer.</p>
+
+      <h3>Ingest Docs</h3>
+      <p>Load PDFs, markdown, or text. Split into chunks (e.g. 500 tokens with overlap). Attach metadata (source, page, section).</p>
+
+      <h3>Store Embeddings</h3>
+      <p>Use an embedding API (OpenAI, Cohere, etc.) or local model. Upsert chunks + vectors into Pinecone, Chroma, pgvector, or similar.</p>
+
+      <h3>Query + Generate</h3>
+      <p>Embed the question, run similarity search, build prompt with top chunks, call LLM, stream or return the response.</p>
+
+      <h2>Frameworks</h2>
+      <p><strong>LangChain</strong>: composable chains, loaders, vector stores. Good for prototyping. <strong>LlamaIndex</strong>: focused on indexing and retrieval; strong for complex ingestion and query graphs. Both support multiple backends.</p>
+
+      <h2>APIs</h2>
+      <p><strong>OpenAI</strong>: <code>text-embedding-3-*</code> for embeddings, GPT-4/3.5 for generation. Simple REST API. <strong>Anthropic</strong>, <strong>Cohere</strong>, and others offer similar embeddings + LLM combos. Consider cost, latency, and region.</p>
+    </article>
+
+    <div class="footer">
+      <p><a href="08-prompt-construction.html">← Prompt Construction</a> • <a href="../index.html">Roadmap</a> • <a href="10-advanced-retrieval.html">Next: Advanced Retrieval →</a></p>
+    </div>
+  </div>
+</body>
+</html>

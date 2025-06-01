@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>13. Production Architecture — RAG Roadmap</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container infographic">
+    <a href="../index.html" class="nav-home">← Back to Roadmap</a>
+    <div class="info-hero">
+      <div class="info-icon"><i class="fa-solid fa-building"></i></div>
+      <span class="level-badge level-orange">Advanced</span>
+      <h1>13. Production Architecture</h1>
+      <p class="subtitle">End-to-end system design for real-world deployments</p>
+    </div>
+    <div class="info-section-label">Architecture</div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-diagram-project"></i></div>
+        <div class="card-title">System Design</div>
+        <div class="card-desc">Ingest (batch + real-time), retrieval, LLM gateway, API. Document flow, failures, SLAs.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-plug"></i></div>
+        <div class="card-title">API & Orchestration</div>
+        <div class="card-desc">Single RAG API. Query→embed→search→prompt→generate. Async where possible.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-gears"></i></div>
+        <div class="card-title">Async Pipelines</div>
+        <div class="card-desc">Kafka, SQS for ingest. Decouple indexing from query path.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+        <div class="card-title">Failure & Retries</div>
+        <div class="card-desc">Retries, fallbacks. Graceful degradation (e.g., keyword-only if vector DB down).</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <div class="card-title">Observability</div>
+        <div class="card-desc">Logs, OpenTelemetry traces. Dashboards: latency, cost, error rate.</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p><a href="12-scaling.html">← Scaling</a> | <a href="../index.html">Roadmap</a> | <a href="14-security.html">Next: Security & Governance →</a></p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>16. Advanced RAG Patterns — RAG Roadmap</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <a href="../index.html" class="nav-home">← Back to Roadmap</a>
+    <header>
+      <span class="level-badge level-red">Expert</span>
+      <h1>16. Advanced RAG Patterns</h1>
+      <p class="subtitle">Agentic RAG, multi-hop, knowledge graphs, temporal, multi-modal</p>
+    </header>
+
+    <article>
+      <h2>Agentic RAG</h2>
+      <p>Agents combine retrieval with tool use (search, calculator, code execution). The LLM decides when to retrieve, when to call tools, and how to synthesize. Enables dynamic, multi-step reasoning beyond static context injection.</p>
+
+      <h2>Multi-Hop Reasoning</h2>
+      <p>Complex questions require multiple retrievals. Answer A leads to retrieval B. Iterative retrieval—use initial results to form follow-up queries—enables chain-of-thought style reasoning over documents.</p>
+
+      <h2>Knowledge Graph + RAG Hybrid</h2>
+      <p>Combine vector search with graph traversal. Embeddings find candidate nodes; graph edges provide structure (relations, hierarchy). Use for "entity + relation" queries and explainability.</p>
+
+      <h2>Temporal RAG</h2>
+      <p>Time-aware retrieval: filter by date, retrieve latest docs, or weight recency. Critical for news, policies, and fast-changing domains.</p>
+
+      <h2>Multi-Modal RAG</h2>
+      <p>Retrieve and generate across text and images. Use vision-language models (VLMs) for image embeddings; joint embedding spaces for text+image similarity. Enables visual QA and document understanding.</p>
+    </article>
+
+    <div class="footer">
+      <p><a href="15-cost-optimization.html">← Cost Optimization</a> | <a href="../index.html">Roadmap</a> | <a href="17-finetuning-vs-rag.html">Next: Fine-Tuning vs RAG →</a></p>
+    </div>
+  </div>
+</body>
+</html>

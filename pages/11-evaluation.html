@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11. Evaluation & Metrics — RAG Roadmap</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container infographic">
+    <a href="../index.html" class="nav-home">← Back to Roadmap</a>
+    <div class="info-hero">
+      <div class="info-icon"><i class="fa-solid fa-chart-line"></i></div>
+      <span class="level-badge level-orange">Advanced</span>
+      <h1>11. Evaluation & Metrics</h1>
+      <p class="subtitle">Measuring retrieval and generation quality</p>
+    </div>
+    <div class="info-section-label">Retrieval Metrics</div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <div class="card-title">Recall@K</div>
+        <div class="card-desc">Fraction of relevant docs in top-K. Critical for RAG—low recall = LLM misses key context.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
+        <div class="card-title">Precision@K</div>
+        <div class="card-desc">Relevant docs in top-K. Keeps context window focused.</div>
+      </div>
+    </div>
+    <div class="info-section-label">End-to-End</div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-check-double"></i></div>
+        <div class="card-title">Answer Correctness</div>
+        <div class="card-desc">Exact match, BLEU, or LLM-as-judge. Does answer match ground truth?</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-link"></i></div>
+        <div class="card-title">Faithfulness</div>
+        <div class="card-desc">Grounded in context? NLI or LLM judges. Detects hallucination.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-user-check"></i></div>
+        <div class="card-title">Human vs Automated</div>
+        <div class="card-desc">Automate regression; humans for release gates. Combine both.</div>
+      </div>
+    </div>
+    <div style="display:none"><article>
+      <h2>Retrieval Metrics</h2>
+      <h3>Recall@K</h3>
+      <p>Of all relevant documents, what fraction appear in the top-K results? Critical for RAG—low recall means the LLM never sees key context.</p>
+      <h3>Precision@K</h3>
+      <p>Of the top-K retrieved documents, how many are relevant? High precision keeps the context window focused.</p>
+
+      <h2>End-to-End Evaluation</h2>
+      <h3>Answer Correctness</h3>
+      <p>Does the generated answer match the ground truth? Use exact match, BLEU, or LLM-as-judge for semantic similarity.</p>
+      <h3>Faithfulness</h3>
+      <p>Is the answer grounded in the retrieved context? Detects hallucination. Use NLI models or LLM judges to check claim attribution.</p>
+
+      <h2>Human vs Automated Evaluation</h2>
+      <p>Automated metrics are scalable but imperfect. Human evaluation on a sample captures nuance.</p>
+    </article></div>
+
+    <div class="footer">
+      <p><a href="10-advanced-retrieval.html">← Advanced Retrieval</a> | <a href="../index.html">Roadmap</a> | <a href="12-scaling.html">Next: Scaling →</a></p>
+    </div>
+  </div>
+</body>
+</html>

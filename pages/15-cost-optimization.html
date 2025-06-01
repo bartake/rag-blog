@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>15. Cost Optimization — RAG Roadmap</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <a href="../index.html" class="nav-home">← Back to Roadmap</a>
+    <header>
+      <span class="level-badge level-red">Expert</span>
+      <h1>15. Cost Optimization</h1>
+      <p class="subtitle">Embedding cost, storage, retrieval vs LLM cost, caching</p>
+    </header>
+    <article>
+      <h2>Embedding Cost Strategies</h2>
+      <p>Batch embedding calls instead of per-document. Use cheaper models for indexing vs query-time if quality allows. Cache embeddings; avoid re-embedding unchanged docs. Consider open-source/local models to eliminate API cost.</p>
+      <h2>Storage Optimization (Quantization)</h2>
+      <p>Quantize vectors (float32 → int8) to cut storage and often improve speed. PQ (Product Quantization) and scalar quantization trade slight recall for big savings. Test recall impact before deploying.</p>
+      <h2>Retrieval Cost vs LLM Cost</h2>
+      <p>LLM calls usually dominate. Reduce context length when possible; use smaller models; cache responses. Retrieval cost scales with index size and QPS; optimize with indexing and caching.</p>
+      <h2>Caching Embeddings and Responses</h2>
+      <p>Cache query embeddings for identical/similar queries. Cache full LLM responses when query+context match. Implement TTL and invalidation on doc updates.</p>
+    </article>
+    <div class="footer">
+      <p><a href="14-security.html">← Security</a> | <a href="../index.html">Roadmap</a> | <a href="16-advanced-patterns.html">Next: Advanced Patterns →</a></p>
+    </div>
+  </div>
+</body>
+</html>

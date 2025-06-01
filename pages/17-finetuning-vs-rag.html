@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>17. Fine-Tuning vs RAG (Strategic) — RAG Roadmap</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <a href="../index.html" class="nav-home">← Back to Roadmap</a>
+    <header>
+      <span class="level-badge level-red">Expert</span>
+      <h1>17. Fine-Tuning vs RAG (Strategic Layer)</h1>
+      <p class="subtitle">When to use RAG vs fine-tuning, hybrid approaches</p>
+    </header>
+    <article>
+      <h2>When to Use RAG</h2>
+      <p>Use RAG when: knowledge changes frequently; you have proprietary/internal data; you need citations; you want to avoid retraining; latency for updates must be low. Ideal for knowledge bases, docs, support.</p>
+      <h2>When to Fine-Tune</h2>
+      <p>Use fine-tuning when: you need consistent style/tone; task is narrow; data is stable; you want lower inference cost (smaller model); retrieval would be noisy. Ideal for classification, formatting, domain language.</p>
+      <h2>Hybrid Architectures</h2>
+      <p>Combine both: fine-tune for task behavior + RAG for dynamic context. Example: fine-tuned客服 model that retrieves policy docs. Or: RAG for retrieval + fine-tuned summarizer for concise answers.</p>
+    </article>
+    <div class="footer">
+      <p><a href="16-advanced-patterns.html">← Advanced Patterns</a> | <a href="../index.html">Roadmap</a> | <a href="18-enterprise-use-cases.html">Next: Enterprise Use Cases →</a></p>
+    </div>
+  </div>
+</body>
+</html>

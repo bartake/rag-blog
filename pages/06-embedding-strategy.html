@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6. Embedding Strategy — RAG Roadmap</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container infographic">
+    <a href="../index.html" class="nav-home">← Back to Roadmap</a>
+    <div class="info-hero">
+      <div class="info-icon"><i class="fa-solid fa-vector-square"></i></div>
+      <span class="level-badge level-yellow">Intermediate</span>
+      <h1>6. Embedding Strategy</h1>
+      <p class="subtitle">Choosing and optimizing embedding models for RAG</p>
+    </div>
+    <div class="info-section-label">Models & Tradeoffs</div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-list"></i></div>
+        <div class="card-title">Choosing Models</div>
+        <div class="card-desc">OpenAI, Cohere, sentence-transformers, E5, BGE. Consider: dimensions, languages, max length, cost, on-prem.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+        <div class="card-title">Cost vs Accuracy</div>
+        <div class="card-desc">1536-dim vs 384-dim. Benchmark on your domain; smaller often rivals larger.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-flask"></i></div>
+        <div class="card-title">Domain-Specific</div>
+        <div class="card-desc">BioBERT (medical), CodeBERT (code). Use when generic underperforms.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-gears"></i></div>
+        <div class="card-title">Batch vs Real-Time</div>
+        <div class="card-desc">Batch: pre-embed at ingest. Real-time: embed query only. ~50–200ms per query.</div>
+      </div>
+    </div>
+    <div class="footer">
+      <p><a href="05-data-preparation.html">← Data Preparation</a> | <a href="../index.html">Roadmap</a> | <a href="07-retrieval-techniques.html">Next: Retrieval Techniques →</a></p>
+    </div>
+  </div>
+</body>
+</html>

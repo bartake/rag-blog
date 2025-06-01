@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>19. Observability & Continuous Improvement — RAG Roadmap</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <a href="../index.html" class="nav-home">← Back to Roadmap</a>
+    <header>
+      <span class="level-badge level-red">Expert</span>
+      <h1>19. Observability & Continuous Improvement</h1>
+      <p class="subtitle">Feedback loops, drift detection, versioning, A/B testing</p>
+    </header>
+
+    <article>
+      <h2>Feedback Loops</h2>
+      <p>Collect thumbs up/down, edits, or explicit corrections. Use feedback to retrain retrievers, adjust prompts, or flag bad retrievals. Human-in-the-loop improves RAG over time.</p>
+
+      <h2>Retrieval Drift Detection</h2>
+      <p>Monitor retrieval quality as documents or queries change. Track metrics (recall@K, relevance scores) over time. Alert when performance degrades—might indicate embedding drift, bad chunks, or query distribution shift.</p>
+
+      <h2>Model/Version Management</h2>
+      <p>Track embedding model versions, chunking strategies, and prompt templates. A/B test new configs before full rollout. Rollback capability when changes hurt quality.</p>
+
+      <h2>A/B Testing RAG Pipelines</h2>
+      <p>Compare retrieval strategies, chunk sizes, or LLMs. Measure end-to-end metrics (correctness, user satisfaction). Use statistical significance before shipping changes.</p>
+    </article>
+
+    <div class="footer">
+      <p><a href="18-enterprise-use-cases.html">← Enterprise Use Cases</a> | <a href="../index.html">Roadmap</a> | <a href="20-future-trends.html">Next: Future Trends →</a></p>
+    </div>
+  </div>
+</body>
+</html>

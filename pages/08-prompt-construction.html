@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>8. Prompt Construction & Context Injection — RAG Roadmap</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container infographic">
+    <a href="../index.html" class="nav-home">← Back to Roadmap</a>
+    <div class="info-hero">
+      <div class="info-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+      <span class="level-badge level-yellow">Intermediate</span>
+      <h1>8. Prompt Construction</h1>
+      <p class="subtitle">Context window, templates, instructions, guardrails</p>
+    </div>
+    <div class="info-section-label">Best Practices</div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-window-maximize"></i></div>
+        <div class="card-title">Context Window</div>
+        <div class="card-desc">Stay within limit (128K). Prioritize top chunks. Truncate/summarize if needed.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+        <div class="card-title">Templates</div>
+        <div class="card-desc">System + context + query. Use ---CONTEXT--- delimiters.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-divide"></i></div>
+        <div class="card-title">Instruction vs Context</div>
+        <div class="card-desc">Keep "how to answer" separate from "retrieved facts." Improves faithfulness.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="card-title">Guardrails</div>
+        <div class="card-desc">"Answer only from context. Say 'I don't know' if unsure." Reduces hallucination.</div>
+      </div>
+    </div>
+    <div class="footer">
+      <p><a href="07-retrieval-techniques.html">← Retrieval</a> | <a href="../index.html">Roadmap</a> | <a href="09-rag-implementation.html">Next: RAG Implementation →</a></p>
+    </div>
+  </div>
+</body>
+</html>

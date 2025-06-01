@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10. Advanced Retrieval Techniques — RAG Roadmap</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container infographic">
+    <a href="../index.html" class="nav-home">← Back to Roadmap</a>
+    <div class="info-hero">
+      <div class="info-icon"><i class="fa-solid fa-rocket"></i></div>
+      <span class="level-badge level-orange">Advanced</span>
+      <h1>10. Advanced Retrieval Techniques</h1>
+      <p class="subtitle">Re-ranking, parent-child retrieval, fusion, and more</p>
+    </div>
+    <div class="info-section-label">Techniques</div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-sort"></i></div>
+        <div class="card-title">Re-ranking (Cross-encoders)</div>
+        <div class="card-desc">Score (query, passage) together. Top-20→top-5 refinement. Slower, more accurate.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-sitemap"></i></div>
+        <div class="card-title">Parent-Child Retrieval</div>
+        <div class="card-desc">Children for retrieval precision; return parent for context. Granularity + coherence.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-rotate"></i></div>
+        <div class="card-title">Recursive Retrieval</div>
+        <div class="card-desc">Initial chunks → identify gaps → follow-up queries. Iterative until sufficient.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-compress"></i></div>
+        <div class="card-title">Context Compression</div>
+        <div class="card-desc">LLM compresses passages before injection. Fewer tokens, key info preserved.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-layer-group"></i></div>
+        <div class="card-title">RRF (Reciprocal Rank Fusion)</div>
+        <div class="card-desc">Merge vector + BM25. RRF(k)=Σ 1/(k+rank). No score calibration needed.</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p><a href="09-rag-implementation.html">← RAG Implementation</a> | <a href="../index.html">Roadmap</a> | <a href="11-evaluation.html">Next: Evaluation →</a></p>
+    </div>
+  </div>
+</body>
+</html>

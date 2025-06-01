@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3. Vector Databases Fundamentals — RAG Roadmap</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container infographic">
+    <a href="../index.html" class="nav-home">← Back to Roadmap</a>
+    <div class="info-hero">
+      <div class="info-icon"><i class="fa-solid fa-database"></i></div>
+      <span class="level-badge level-green">Beginner</span>
+      <h1>3. Vector Databases Fundamentals</h1>
+      <p class="subtitle">Storing and querying embeddings at scale</p>
+    </div>
+
+    <div class="info-section-label">Embeddings & Similarity</div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-layer-group"></i></div>
+        <div class="card-title">Embeddings in Practice</div>
+        <div class="card-desc">768–1536 dim float arrays per chunk. Stored in vector DB; query embedded & compared at retrieval time.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-ruler-combined"></i></div>
+        <div class="card-title">Cosine Similarity</div>
+        <div class="card-desc">Angle between vectors. Range [-1,1]. Use when magnitude doesn't matter.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-arrows-left-right"></i></div>
+        <div class="card-title">L2 & Dot Product</div>
+        <div class="card-desc">L2 = Euclidean distance. Dot product (normalized ≈ cosine). Pick per embedding model.</div>
+      </div>
+    </div>
+
+    <div class="info-section-label">Indexing</div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-search"></i></div>
+        <div class="card-title">Exact Search</div>
+        <div class="card-desc">Brute-force O(n). Accurate but slow at scale.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+        <div class="card-title">ANN</div>
+        <div class="card-desc">HNSW, IVF, LSH. Sublinear, 95–99% recall. Right choice for most RAG.</div>
+      </div>
+    </div>
+
+    <div class="info-section-label">Tools</div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-brands fa-pinecone"></i></div>
+        <div class="card-title">Pinecone</div>
+        <div class="card-desc">Managed, serverless. Simple API, auto-scaling.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-cube"></i></div>
+        <div class="card-title">Weaviate</div>
+        <div class="card-desc">Open-source, GraphQL, hybrid search, built-in vectorizers.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-server"></i></div>
+        <div class="card-title">Milvus</div>
+        <div class="card-desc">Distributed, billion-scale. For high-throughput enterprises.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-filter"></i></div>
+        <div class="card-title">Metadata Filtering</div>
+        <div class="card-desc">Filter by doc_id, language, date. Pre/post/hybrid. Critical for multi-tenant RAG.</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p><a href="02-information-retrieval.html">← Information Retrieval</a> | <a href="../index.html">Roadmap</a> | <a href="04-rag-core.html">Next: RAG Core Concept →</a></p>
+    </div>
+  </div>
+</body>
+</html>

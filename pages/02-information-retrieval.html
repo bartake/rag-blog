@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2. Information Retrieval Fundamentals — RAG Roadmap</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container infographic">
+    <a href="../index.html" class="nav-home">← Back to Roadmap</a>
+    <div class="info-hero">
+      <div class="info-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+      <span class="level-badge level-green">Beginner</span>
+      <h1>2. Information Retrieval Fundamentals</h1>
+      <p class="subtitle">Keyword search, metrics, and relevance</p>
+    </div>
+
+    <div class="info-section-label">Search Types</div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-keyboard"></i></div>
+        <div class="card-title">Keyword Search</div>
+        <div class="card-desc">Matches exact/stemming terms. Fast & interpretable but fails on synonyms. "run" → "running".</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
+        <div class="card-title">Semantic Search</div>
+        <div class="card-desc">Uses embeddings for meaningful similarity. "fix flat tire" can match "puncture repair" with no word overlap.</div>
+      </div>
+    </div>
+
+    <div class="info-section-label">TF-IDF & BM25</div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-calculator"></i></div>
+        <div class="card-title">TF-IDF</div>
+        <div class="card-desc">TF × IDF. Rewards frequent terms in doc; penalizes terms in many docs. Good baseline for sparse retrieval.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <div class="card-title">BM25</div>
+        <div class="card-desc">Improves TF-IDF: saturates term freq, doc-length normalization. Go-to for keyword retrieval.</div>
+      </div>
+    </div>
+
+    <div class="info-section-label">Metrics</div>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
+        <div class="card-title">Precision</div>
+        <div class="card-desc">Relevant Retrieved / Retrieved. Fewer false positives.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <div class="card-title">Recall</div>
+        <div class="card-desc">Relevant Retrieved / All Relevant. Fewer false negatives.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+        <div class="card-title">F1</div>
+        <div class="card-desc">Harmonic mean of precision & recall. In RAG: recall for context, precision for clean window.</div>
+      </div>
+      <div class="info-card">
+        <div class="card-icon"><i class="fa-solid fa-ranking-star"></i></div>
+        <div class="card-title">Ranking</div>
+        <div class="card-desc">NDCG accounts for position. Top results matter more. Retrieve top-K, optionally re-rank.</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p><a href="01-foundations.html">← Foundations</a> | <a href="../index.html">Roadmap</a> | <a href="03-vector-databases.html">Next: Vector Databases →</a></p>
+    </div>
+  </div>
+</body>
+</html>
