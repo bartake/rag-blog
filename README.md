@@ -25,32 +25,31 @@ Then open `http://localhost:3000` (or the port shown).
 - 🟠 **Advanced** (10–13): Advanced retrieval, evaluation, scaling, production
 - 🔴 **Expert** (14–20): Security, cost, advanced patterns, enterprise use cases, observability, future trends
 
-## Publish to GitHub
+## Publish to GitHub (SSH)
 
-The project is a Git repo on `main` with an initial commit. To push it to **your** GitHub account:
+This repo is on branch `main` with commits. Pushing uses **SSH** (`git@github.com:...`), not HTTPS.
 
-1. **Log in** with the [GitHub CLI](https://cli.github.com/) (install if needed: `winget install GitHub.cli`):
+1. **Create an empty repository** on GitHub ([new repository](https://github.com/new)): choose a name (e.g. `rag-blog`), **do not** add a README, `.gitignore`, or license (avoids merge conflicts).
 
-   ```bash
-   gh auth login
-   ```
-
-   Follow the prompts (HTTPS, authenticate via browser, or paste a personal access token).
-
-2. **Create the remote repo and push** from this folder:
+2. **Point `origin` at that repo** (skip if it already matches):
 
    ```bash
-   cd rag-blog
-   gh repo create rag-blog --public --source=. --remote=origin --push
+   git remote add origin git@github.com:YOUR_USERNAME/YOUR_REPO.git
    ```
 
-   Change `rag-blog` to your preferred repository name. Use `--private` instead of `--public` if you want a private repo.
+   To change an existing remote:
 
-**If you already created an empty repo on GitHub**, add it and push:
+   ```bash
+   git remote set-url origin git@github.com:YOUR_USERNAME/YOUR_REPO.git
+   ```
 
-```bash
-git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
-git push -u origin main
-```
+3. **Push**:
 
-Replace `YOUR_USERNAME` and `YOUR_REPO` with your GitHub username and repository name.
+   ```bash
+   git push -u origin main
+   ```
+
+If you see `ERROR: Repository not found`, the GitHub repo does not exist yet or the URL does not match your account/org.
+
+**Optional — [GitHub CLI](https://cli.github.com/)** (after `gh auth login`):  
+`gh repo create rag-blog --public --source=. --remote=origin --push` (creates the repo and pushes; can use SSH for Git operations if configured in `gh`).
