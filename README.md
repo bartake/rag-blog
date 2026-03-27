@@ -8,6 +8,26 @@ A static, multi-page blog that walks through a **RAG (Retrieval-Augmented Genera
 - **pages/** — One HTML page per roadmap section
 - **css/styles.css** — Shared styling (dark theme)
 
+## Screenshots
+
+Previews of the roadmap home, the one-page infographic, and the first two chapter pages (captured at 1280px width; infographic is full-page height).
+
+### `index.html` — table of contents
+
+![Roadmap home — table of contents](docs/screenshots/01-index.png)
+
+### `rag-infographic.html` — visual overview
+
+![RAG infographic overview](docs/screenshots/02-rag-infographic.png)
+
+### `pages/01-foundations.html` — chapter 1
+
+![Chapter 1 — Foundations](docs/screenshots/03-01-foundations.png)
+
+### `pages/02-information-retrieval.html` — chapter 2
+
+![Chapter 2 — Information retrieval fundamentals](docs/screenshots/04-02-information-retrieval.png)
+
 ## Running locally
 
 ```bash
